@@ -15,7 +15,7 @@ The bundle and configuration can be built and loaded into ConductR directly from
 
 ```
 set configurationName := "example"
-configuration:dist
+config:dist
 bundle:dist
 conduct load <hit tab><hit space><hit tab>
 ```
