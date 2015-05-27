@@ -1,4 +1,4 @@
-# Postgres BDR
+# Postgres 9.4 BDR
 
 This project declares a bundle that hosts the PostgresSQL [Bi-Directional Replication (BDR)](http://2ndquadrant.com/en/resources/bdr/) project. BDR provides PostgresSQL as a fully resilient SQL database with the ability to scale a master/master approach to 48 nodes.
 

@@ -21,8 +21,8 @@ psql -U postgres $POSTGRES_DBNAME <<- EOSQL
   CREATE EXTENSION bdr;
 
   SELECT bdr.bdr_group_create(
-    local_node_name := '$HOST_IP-$POSTGRES_HOST_PORT',
-    node_external_dsn := 'host=$HOST_IP port=$POSTGRES_HOST_PORT dbname=$POSTGRES_DBNAME password=$POSTGRES_PASSWORD'$JOIN
+    local_node_name := '$BUNDLE_HOST_IP-$POSTGRES_HOST_PORT',
+    node_external_dsn := 'host=$BUNDLE_HOST_IP port=$POSTGRES_HOST_PORT dbname=$POSTGRES_DBNAME password=$POSTGRES_PASSWORD'$JOIN
   );
 EOSQL
 

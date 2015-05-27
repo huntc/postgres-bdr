@@ -2,7 +2,7 @@ import ByteConversions._
 import com.typesafe.sbt.packager.docker._
 
 lazy val commonSettings: Seq[Setting[_]] = Seq(
-  version in ThisBuild := "0.1.0-SNAPSHOT"
+  version in ThisBuild := "9.4"
   )
 
 lazy val root = (project in file(".")).
@@ -15,10 +15,12 @@ lazy val root = (project in file(".")).
       Cmd("ADD", "/opt/docker/bin/init-database.sh /docker-entrypoint-initdb.d/")
     ),
     scriptClasspathOrdering := Seq.empty,
+    BundleKeys.system := "postgres94",
     BundleKeys.bundleType := Docker,
     BundleKeys.nrOfCpus := 4.0,
     BundleKeys.memory := 2.GB,
     BundleKeys.diskSpace := 10.GB,
+    BundleKeys.roles := Set("postgres94"),
     BundleKeys.endpoints := Map(
       "postgres" -> Endpoint("tcp", 5432, services = Set(uri("tcp://:5432")))
     ),
