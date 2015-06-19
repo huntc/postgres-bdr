@@ -16,8 +16,8 @@ There's also a `bundle.conf` file alongside `runtime-config.sh`. This contains c
 The bundle and configuration can be built and loaded into ConductR directly from the sbt console:
 
 ```
-set configurationName := "example"
-config:dist
+set BundleKeys.configurationName := "example"
+configuration:dist
 bundle:dist
 conduct load <hit tab><hit space><hit tab>
 ```
