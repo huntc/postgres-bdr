@@ -6,7 +6,7 @@ lazy val commonSettings: Seq[Setting[_]] = Seq(
   )
 
 lazy val root = (project in file(".")).
-  enablePlugins(ConductRPlugin, JavaAppPackaging).
+  enablePlugins(JavaAppPackaging).
   settings(
     commonSettings,
     name := "postgres-bdr",
@@ -17,7 +17,7 @@ lazy val root = (project in file(".")).
     scriptClasspathOrdering := Seq.empty,
     BundleKeys.system := "postgres94",
     BundleKeys.bundleType := Docker,
-    BundleKeys.nrOfCpus := 4.0,
+    BundleKeys.nrOfCpus := 2.0,
     BundleKeys.memory := 2.GB,
     BundleKeys.diskSpace := 10.GB,
     BundleKeys.roles := Set("postgres94"),
