@@ -6,7 +6,7 @@ lazy val commonSettings: Seq[Setting[_]] = Seq(
   )
 
 lazy val root = (project in file(".")).
-  enablePlugins(ConductRPlugin, JavaAppPackaging).
+  enablePlugins(JavaAppPackaging).
   settings(
     commonSettings,
     name := "postgres-bdr",
