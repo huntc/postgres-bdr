@@ -22,7 +22,7 @@ lazy val root = (project in file(".")).
     BundleKeys.diskSpace := 10.GB,
     BundleKeys.roles := Set("postgres94"),
     BundleKeys.endpoints := Map(
-      "postgres" -> Endpoint("tcp", 5432, services = Set(uri("tcp://:5432")))
+      "postgres" -> Endpoint("tcp", 5432, RequestAcl(Tcp(5432)))
     ),
     BundleKeys.startCommand := Seq.empty,
     BundleKeys.checks := Seq(uri("docker+$POSTGRES_HOST"))
